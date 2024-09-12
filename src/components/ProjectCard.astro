@@ -1,0 +1,28 @@
+---
+// Declaramos las props explícitamente
+export interface Props {
+  title: string;
+  imgSrc: string;
+  description: string;
+  technologies: string[]; // Lista de tecnologías como strings
+  githubLink: string;
+}
+
+// Extraemos las props de Astro.props
+const { title, imgSrc, description, technologies, githubLink } = Astro.props;
+---
+
+<article class="bg-gray-700 p-6 rounded-lg hover:bg-teal-500 transition">
+  <h3 class="text-white text-2xl font-bold mb-3">{title}</h3>
+  <img src={imgSrc} alt={`Imagen del proyecto ${title}`} class="w-full h-40 object-cover rounded-md mb-4">
+  <p class="text-gray-300 leading-relaxed mb-4">{description}</p>
+  <p class="text-teal-400 font-semibold mb-2">Tecnologías utilizadas:</p>
+  <ul class="text-gray-300 list-disc list-inside space-y-1">
+    {technologies.map((tech: string) => (
+      <li>{tech}</li>
+    ))}
+  </ul>
+  <a href={githubLink} class="inline-block mt-4 text-teal-400 hover:underline">
+    Ver proyecto en GitHub
+  </a>
+</article>
