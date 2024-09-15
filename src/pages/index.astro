@@ -1,111 +1,106 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
-import ProjectCard from '../components/ProjectCard.astro'
+import ProjectCard from '../components/ProjectCard.astro';
+
 ---
 
 <Layout title="TumoDev">
   <!-- Contenido principal -->
   <main>
     <!-- Sección de Introducción -->
-    <section class="w-full mx-auto py-60 bg-gray-900 text-gray-100">
-      <div class="flex flex-col items-start justify-center max-w-xl mx-auto">
-        <div class="flex justify-end w-full px-4">
-        <a href="https://www.linkedin.com/in/franciscocj/" class="mt-4 py-3">
-          <Badge>Disponible para Trabajos</Badge>
-        </a>
+    <section class="w-full mx-auto py-40 md:py-60 bg-gray-900 text-gray-100">
+      <div class="flex flex-col items-center justify-center max-w-2xl mx-auto px-6">
+        <div class="flex justify-center md:justify-end w-full px-4">
+          <a href="https://www.linkedin.com/in/franciscocj/" class="mt-4 py-3 md:px-4">
+            <Badge>Disponible para Trabajos</Badge>
+          </a>
         </div>
-        <h1 class="text-6xl font-bold">
+        <h1 class="text-5xl md:text-6xl font-bold text-center md:text-left">
           Hola, soy <span class="text-teal-400">Tumo</span><span class="text-white">Dev</span>
         </h1>
-        <h2 class="text-2xl font-light mt-4">
+        <h2 class="text-2xl md:text-2xl font-light mt-6 text-center md:text-left">
           Estudiante Universitario y Desarrollador FullStack
         </h2>
       </div>
     </section>
-    
-    
-    
+
     <!-- Sección Sobre Mí -->
-    <section id="sobre-mi" class="w-full mx-auto py-24 px-5 bg-gray-800 text-center">
-      <h2 class="text-teal-400 text-4xl font-bold mb-8">
+    <section id="sobre-mi" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-800 text-center">
+      <h2 class="text-teal-400 text-3xl md:text-4xl font-bold mb-8">
         Sobre Mí
       </h2>
-      <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+      <p class="text-gray-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
         Soy un apasionado por la tecnología y el desarrollo de software. Actualmente estoy estudiando para convertirme en un desarrollador FullStack especializado en tecnologías modernas como JavaScript, Python, Docker y más. Me encanta aprender cosas nuevas, enfrentar desafíos y encontrar soluciones creativas a problemas complejos.
       </p>
     </section>
 
     <!-- Sección de Habilidades -->
-    <section id="habilidades" class="w-full mx-auto py-24 px-5 bg-gray-900">
-      <h2 class="text-teal-400 text-4xl font-bold text-center mb-8">
+    <section id="habilidades" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-900">
+      <h2 class="text-teal-400 text-3xl md:text-4xl font-bold text-center mb-8">
         Habilidades
       </h2>
-      <div class="flex flex-wrap justify-center gap-5">
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-3 px-6 rounded-full shadow-lg text-xl">JavaScript</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-3 px-6 rounded-full shadow-lg text-xl">Python</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-3 px-6 rounded-full shadow-lg text-xl">Docker</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-3 px-6 rounded-full shadow-lg text-xl">Tailwind CSS</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-3 px-6 rounded-full shadow-lg text-xl">Next.js</div>
+      <div class="flex flex-wrap justify-center gap-3 md:gap-5">
+        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">JavaScript</div>
+        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Python</div>
+        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Docker</div>
+        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Tailwind CSS</div>
+        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Next.js</div>
       </div>
     </section>
 
     <!-- Sección de Proyectos -->
-    <section id="proyectos" class="w-full mx-auto py-24 px-40 bg-gray-800">
-      <h2 class="text-teal-400 text-4xl font-bold text-center mb-8">
+    <section id="proyectos" class="w-full mx-auto py-16 md:py-24 px-5 md:px-40 bg-gray-800">
+      <h2 class="text-teal-400 text-3xl md:text-4xl font-bold text-center mb-8">
         Proyectos
       </h2>
-      
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Proyecto 1 -->
-          <ProjectCard 
-            title="Aplicación Web - React & Node.js" 
-            imgSrc="ruta-a-la-imagen-del-proyecto1.jpg" 
-            description="Desarrollé una aplicación web con React y Node.js optimizando la escalabilidad y la experiencia del usuario. Incluye autenticación con JWT, panel de administración, y manejo de bases de datos en MongoDB."
-            technologies={["React", "Redux", "Node.js", "Express", "MongoDB", "Mongoose", "JWT para autenticación"]}
-            githubLink="https://github.com/usuario/proyecto1"
-          />
-      
-          <!-- Proyecto 2 -->
-          <ProjectCard 
-            title="API Rest - Python & Flask" 
-            imgSrc="ruta-a-la-imagen-del-proyecto2.jpg" 
-            description="Creación de una API Rest con Python y Flask que gestiona datos de usuarios y productos, diseñada para integrarse con aplicaciones frontend y otros servicios a través de endpoints robustos y escalables."
-            technologies={["Python", "Flask", "PostgreSQL", "Docker", "NGINX"]}
-            githubLink="https://github.com/usuario/proyecto2"
-          />
-      
-          <!-- Proyecto 3 -->
-          <ProjectCard 
-            title="Sistema de Gestión - Django & React" 
-            imgSrc="ruta-a-la-imagen-del-proyecto3.jpg" 
-            description="Desarrollé un sistema de gestión para pequeñas empresas, integrando un backend con Django y un frontend con React. El sistema incluye reportes automáticos, gestión de usuarios, y notificaciones."
-            technologies={["Django", "Django Rest Framework", "React", "Axios", "SQLite", "Bootstrap"]}
-            githubLink="https://github.com/usuario/proyecto3"
-          />
-      
-          <!-- Proyecto 4 -->
-          <ProjectCard 
-            title="Plataforma de e-learning - MERN Stack" 
-            imgSrc="ruta-a-la-imagen-del-proyecto4.jpg" 
-            description="Plataforma de educación en línea desarrollada con la pila MERN (MongoDB, Express, React, Node). Incluye gestión de cursos, usuarios y pagos integrados con Stripe."
-            technologies={["MongoDB", "Express", "React", "Node", "Stripe", "JWT", "Material-UI"]}
-            githubLink="https://github.com/usuario/proyecto4"
-          />
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <!-- Proyecto 1 -->
+        <ProjectCard 
+          title="Aplicación Web - React & Node.js" 
+          imgSrc="ruta-a-la-imagen-del-proyecto1.jpg" 
+          description="Desarrollé una aplicación web con React y Node.js optimizando la escalabilidad y la experiencia del usuario. Incluye autenticación con JWT, panel de administración, y manejo de bases de datos en MongoDB."
+          technologies={["React", "Redux", "Node.js", "Express", "MongoDB", "Mongoose", "JWT para autenticación"]}
+          githubLink="https://github.com/usuario/proyecto1"
+        />
+        <!-- Proyecto 2 -->
+        <ProjectCard 
+          title="API Rest - Python & Flask" 
+          imgSrc="ruta-a-la-imagen-del-proyecto2.jpg" 
+          description="Creación de una API Rest con Python y Flask que gestiona datos de usuarios y productos, diseñada para integrarse con aplicaciones frontend y otros servicios a través de endpoints robustos y escalables."
+          technologies={["Python", "Flask", "PostgreSQL", "Docker", "NGINX"]}
+          githubLink="https://github.com/usuario/proyecto2"
+        />
+        <!-- Proyecto 3 -->
+        <ProjectCard 
+          title="Sistema de Gestión - Django & React" 
+          imgSrc="ruta-a-la-imagen-del-proyecto3.jpg" 
+          description="Desarrollé un sistema de gestión para pequeñas empresas, integrando un backend con Django y un frontend con React. El sistema incluye reportes automáticos, gestión de usuarios, y notificaciones."
+          technologies={["Django", "Django Rest Framework", "React", "Axios", "SQLite", "Bootstrap"]}
+          githubLink="https://github.com/usuario/proyecto3"
+        />
+        <!-- Proyecto 4 -->
+        <ProjectCard 
+          title="Plataforma de e-learning - MERN Stack" 
+          imgSrc="ruta-a-la-imagen-del-proyecto4.jpg" 
+          description="Plataforma de educación en línea desarrollada con la pila MERN (MongoDB, Express, React, Node). Incluye gestión de cursos, usuarios y pagos integrados con Stripe."
+          technologies={["MongoDB", "Express", "React", "Node", "Stripe", "JWT", "Material-UI"]}
+          githubLink="https://github.com/usuario/proyecto4"
+        />
+      </div>
     </section>
 
     <!-- Sección de Experiencia Laboral (Línea de Tiempo) -->
-    <section id="experiencia" class="w-full mx-auto py-24 px-5 bg-gray-900 text-gray-100">
+    <section id="experiencia" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-900 text-gray-100">
       <div class="flex flex-col max-w-3xl mx-auto">
-        <h2 class="text-teal-400 text-4xl font-bold mb-8 text-left">
+        <h2 class="text-teal-400 text-3xl md:text-4xl font-bold mb-8 text-left">
           Experiencia Laboral
         </h2>
         <div class="relative border-l border-teal-400">
           <!-- Experiencia 1 -->
           <div class="mb-10 ml-6 text-left">
-            <span class="absolute flex items-center justify-center w-8 h-8 bg-teal-400 rounded-full -left-4 ring-8 ring-gray-900"></span>
-            <h3 class="text-white text-2xl font-bold">Desarrollador FullStack - BrainLink</h3>
+            <span class="absolute flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-teal-400 rounded-full -left-3 md:-left-4 ring-8 ring-gray-900"></span>
+            <h3 class="text-white text-xl md:text-2xl font-bold">Desarrollador FullStack - BrainLink</h3>
             <p class="text-gray-300">Enero 2021 - Julio 2023</p>
             <p class="text-gray-300 mt-2 leading-relaxed">
               Colaboré en el desarrollo de aplicaciones web y un juego educativo utilizando tecnologías modernas. Además, diseñé una API que facilita la comunicación entre sistemas utilizando patrones de diseño y buenas prácticas en desarrollo.
@@ -113,8 +108,8 @@ import ProjectCard from '../components/ProjectCard.astro'
           </div>
           <!-- Experiencia 2 -->
           <div class="mb-10 ml-6 text-left">
-            <span class="absolute flex items-center justify-center w-8 h-8 bg-teal-400 rounded-full -left-4 ring-8 ring-gray-900"></span>
-            <h3 class="text-white text-2xl font-bold">Ingeniero de Software - Mi Futuro</h3>
+            <span class="absolute flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-teal-400 rounded-full -left-3 md:-left-4 ring-8 ring-gray-900"></span>
+            <h3 class="text-white text-xl md:text-2xl font-bold">Ingeniero de Software - Mi Futuro</h3>
             <p class="text-gray-300">Agosto 2023 - Actualidad</p>
             <p class="text-gray-300 mt-2 leading-relaxed">
               Formé parte del equipo que implementó un sistema de análisis de datos para predecir las tasas de matriculación en educación superior, aplicando técnicas de análisis de datos y modelos predictivos.
@@ -125,13 +120,13 @@ import ProjectCard from '../components/ProjectCard.astro'
     </section>
     
     <!-- Sección de Contacto -->
-    <section id="contacto" class="w-full mx-auto py-24 px-5 bg-gray-900 text-center text-gray-100">
-      <h2 class="text-teal-400 text-4xl font-bold mb-8">
+    <section id="contacto" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-900 text-center text-gray-100">
+      <h2 class="text-teal-400 text-3xl md:text-4xl font-bold mb-8">
         Contacto
       </h2>
-      <p class="text-gray-300 text-lg max-w-xl mx-auto mb-6 leading-relaxed">
+      <p class="text-gray-300 text-base md:text-lg max-w-xl mx-auto mb-6 leading-relaxed">
         Si estás interesado en trabajar conmigo o simplemente quieres saludar, no dudes en contactarme a través de 
-        <a href="mailto:tumodev@example.com" class="text-teal-400 hover:underline">tumodev@example.com</a>.
+        <a href="mailto:work@tumodev.com" class="text-teal-400 hover:underline">work@tumodev.com</a>.
       </p>
       <a href="https://www.linkedin.com/in/franciscocj/" class="bg-teal-400 text-gray-900 py-3 px-6 rounded-full hover:bg-teal-500 transition">
         Conecta conmigo en LinkedIn

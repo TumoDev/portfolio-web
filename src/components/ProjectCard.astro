@@ -1,13 +1,4 @@
 ---
-// Declaramos las props explícitamente
-export interface Props {
-  title: string;
-  imgSrc: string;
-  description: string;
-  technologies: string[]; // Lista de tecnologías como strings
-  githubLink: string;
-}
-
 // Extraemos las props de Astro.props
 const { title, imgSrc, description, technologies, githubLink } = Astro.props;
 ---
