@@ -2,34 +2,29 @@ import React, { useEffect, useState } from 'react';
 
 const Carousel = ({ featuredPosts }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [visibleSlides, setVisibleSlides] = useState(3); // Número de elementos visibles a la vez
+    const [visibleSlides, setVisibleSlides] = useState(3); 
 
-    // Ajustar el número de elementos visibles basado en el tamaño de la pantalla
     useEffect(() => {
         const updateVisibleSlides = () => {
-            if (window.innerWidth < 640) { // Pantallas pequeñas (por ejemplo, menos de 640px)
+            if (window.innerWidth < 640) { 
                 setVisibleSlides(1);
             } else {
                 setVisibleSlides(3);
             }
         };
 
-        // Llamar a la función al cargar y cuando la ventana cambie de tamaño
         updateVisibleSlides();
         window.addEventListener('resize', updateVisibleSlides);
         
-        // Limpiar el evento cuando el componente se desmonte
         return () => window.removeEventListener('resize', updateVisibleSlides);
     }, []);
 
-    // Función para avanzar al siguiente conjunto de elementos
     const nextSlide = () => {
         setCurrentSlide((prevSlide) =>
             (prevSlide - visibleSlides + featuredPosts.length) % featuredPosts.length
         );
     };
 
-    // Función para retroceder al conjunto anterior de elementos
     const prevSlide = () => {
         setCurrentSlide((prevSlide) =>
             (prevSlide + visibleSlides) % featuredPosts.length
@@ -37,7 +32,7 @@ const Carousel = ({ featuredPosts }) => {
     };
 
     useEffect(() => {
-        const interval = setInterval(nextSlide, 3000); // Cambia de slide cada 3 segundos
+        const interval = setInterval(nextSlide, 3000); 
         return () => clearInterval(interval);
     }, [featuredPosts.length, visibleSlides]);
 

@@ -1,10 +1,7 @@
-<!-- Navbar -->
 <header class="w-full fixed top-0 z-50 bg-gray-900 md:bg-opacity-75 shadow-lg">
   <nav class="max-w-7xl mx-auto px-5 lg:px-20 py-4 flex justify-between items-center">
-    <!-- Logo -->
     <a href="/" class="text-2xl font-bold">Tumo<span class="text-teal-400">Dev</span></a>
 
-    <!-- Links del navbar para pantallas medianas y grandes -->
     <ul class="hidden md:flex space-x-8 text-gray-300">
       <li><a href="/#sobre-mi" class="hover:text-teal-400 transition">Sobre Mí</a></li>
       <li><a href="/#habilidades" class="hover:text-teal-400 transition">Habilidades</a></li>
@@ -13,7 +10,6 @@
       <li><a href="/#contacto" class="hover:text-teal-400 transition">Contacto</a></li>
     </ul>
 
-    <!-- Menú responsive -->
     <div class="md:hidden">
       <button id="menu-toggle" class="text-gray-300 focus:outline-none">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -23,7 +19,6 @@
     </div>
   </nav>
 
-  <!-- Menú desplegable responsive -->
   <div id="mobile-menu" class="hidden flex-col md:hidden bg-gray-800 bg-opacity-90 py-4 transition-all duration-300 ease-in-out absolute w-full left-0 top-16">
     <ul class="space-y-4 text-center text-gray-300">
       <li><a href="/#sobre-mi" class="block hover:text-teal-400 transition">Sobre Mí</a></li>
@@ -35,17 +30,15 @@
   </div>
 </header>
 
-<!-- JavaScript para el menú hamburguesa -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    // Verificamos si los elementos existen antes de agregar el evento
     if (menuToggle && mobileMenu) {
       const toggleMenu = () => {
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex'); // Cambiar a flex para mantener la alineación
+        mobileMenu.classList.toggle('flex'); 
       };
 
       menuToggle.addEventListener('click', toggleMenu);

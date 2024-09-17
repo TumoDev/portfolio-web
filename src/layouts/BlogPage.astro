@@ -1,5 +1,4 @@
 ---
-// src/layouts/BlogPage.astro
 import Layout from './Layout.astro';
 
 const { frontmatter } = Astro.props;
@@ -8,12 +7,10 @@ const { frontmatter } = Astro.props;
 <Layout title={frontmatter.title}>
     <section class="w-full min-h-screen bg-gray-900 text-gray-100 py-24 px-4 sm:px-8 lg:px-24">
         <article class="max-w-3xl mx-auto bg-gray-800 p-6 sm:p-10 rounded-lg shadow-lg">
-            <!-- Título de la Publicación -->
             <header class="mb-8">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-teal-400 mb-4 leading-tight">
                     {frontmatter.title}
                 </h1>
-                <!-- Barra de Información -->
                 <div class="flex flex-col sm:flex-row sm:justify-between text-sm sm:text-base text-gray-400 border-t border-b border-gray-700 py-4">
                     <!-- Fecha de Publicación -->
                     <div class="flex items-center mb-2 sm:mb-0">
@@ -22,7 +19,6 @@ const { frontmatter } = Astro.props;
                         </svg>
                         <p>{frontmatter.date}</p>
                     </div>
-                    <!-- Etiquetas -->
                     <div class="flex items-center space-x-2">
                         <svg class="h-5 w-5 mr-1 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A1 1 0 016.804 19.49l4.95-4.95a1 1 0 00-.707-1.707l-3.536-.707.707-3.536a1 1 0 00-1.707-.707L4.489 6.805A1 1 0 003.804 8.49l4.95 4.95a1 1 0 01-1.707 1.707L5.12 17.804z"></path>
@@ -37,7 +33,6 @@ const { frontmatter } = Astro.props;
                     </div>
                 </div>
             </header>
-            <!-- Contenido de la Publicación -->
             <div class="prose prose-lg prose-invert text-gray-300">
                 <slot />
             </div>

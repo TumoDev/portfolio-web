@@ -5,9 +5,8 @@ import ProjectCard from '../components/ProjectCard.astro';
 ---
 
 <Layout title="TumoDev">
-  <!-- Contenido principal -->
   <main>
-    <!-- Sección de Introducción -->
+    <!-- Presentacion -->
     <section class="w-full mx-auto py-40 md:py-60 bg-gray-900 text-gray-100">
       <div class="flex flex-col items-center justify-center max-w-2xl mx-auto px-6">
         <div class="flex justify-center md:justify-end w-full px-4">
@@ -24,7 +23,7 @@ import ProjectCard from '../components/ProjectCard.astro';
       </div>
     </section>
 
-    <!-- Sección Sobre Mí -->
+    <!-- Sobre Mí -->
     <section id="sobre-mi" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-800 text-center">
       <h2 class="text-teal-400 text-3xl md:text-4xl font-bold mb-8">
         Sobre Mí
@@ -34,7 +33,7 @@ import ProjectCard from '../components/ProjectCard.astro';
       </p>
     </section>
 
-    <!-- Sección de Habilidades -->
+    <!-- Habilidades -->
     <section id="habilidades" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-900">
       <h2 class="text-teal-400 text-3xl md:text-4xl font-bold text-center mb-8">
         Habilidades
@@ -57,13 +56,12 @@ import ProjectCard from '../components/ProjectCard.astro';
       </div>       
     </section>
 
-    <!-- Sección de Proyectos -->
+    <!-- Proyectos -->
     <section id="proyectos" class="w-full mx-auto py-16 md:py-24 px-5 md:px-40 bg-gray-800">
       <h2 class="text-teal-400 text-3xl md:text-4xl font-bold text-center mb-8">
         Proyectos
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <!-- Proyecto 1 -->
         <ProjectCard 
           title="Desarrollo de Plataforma Backend y Frontend para Bot Criptomonedas" 
           imgSrc="/proyectos/smarttrade.png" 
@@ -71,7 +69,6 @@ import ProjectCard from '../components/ProjectCard.astro';
           technologies={["React", "Ionic", "Figma", "PostgresSQL", "Flask", "JWT", "AWS EC2", "Docker"]}
           githubLink="https://github.com/usuario/proyecto1"
         />
-        <!-- Proyecto 2 -->
         <ProjectCard 
           title="Blog de programación" 
           imgSrc="/proyectos/blog.png" 
@@ -79,7 +76,6 @@ import ProjectCard from '../components/ProjectCard.astro';
           technologies={["Astro", "Tailwind", "React"]}
           githubLink="https://tumodev.com/blog"
         />
-        <!-- Proyecto 3 -->
         <ProjectCard 
           title="Portafolio web" 
           imgSrc="/proyectos/portfolio.png" 
@@ -87,7 +83,6 @@ import ProjectCard from '../components/ProjectCard.astro';
           technologies={["Astro", "Taildwind", "Figma"]}
           githubLink="https://tumodev.com"
         />
-        <!-- Proyecto 4 -->
         <ProjectCard 
           title="Evaluador Automático de Cuestionarios para la PUCV" 
           imgSrc="/proyectos/evaluai.png" 
@@ -98,7 +93,7 @@ import ProjectCard from '../components/ProjectCard.astro';
       </div>
     </section>
 
-    <!-- Sección de Experiencia Laboral (Línea de Tiempo) -->
+    <!-- Experiencia Laboral -->
     <section id="experiencia" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-900 text-gray-100">
       <div class="flex flex-col max-w-3xl mx-auto">
         <h2 class="text-teal-400 text-3xl md:text-4xl font-bold mb-8 text-left">
@@ -135,7 +130,7 @@ import ProjectCard from '../components/ProjectCard.astro';
       </div>
     </section>
     
-    <!-- Sección de Contacto -->
+    <!-- Contacto -->
     <section id="contacto" class="w-full mx-auto py-16 md:py-24 px-5 bg-gray-900 text-center text-gray-100">
       <h2 class="text-teal-400 text-3xl md:text-4xl font-bold mb-8">
         Contacto
