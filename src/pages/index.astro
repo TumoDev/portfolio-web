@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-
 ---
 
 <Layout title="TumoDev">
@@ -41,12 +40,21 @@ import ProjectCard from '../components/ProjectCard.astro';
         Habilidades
       </h2>
       <div class="flex flex-wrap justify-center gap-3 md:gap-5">
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">JavaScript</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Python</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Docker</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Tailwind CSS</div>
-        <div class="bg-gray-700 hover:bg-teal-500 text-white py-2 px-4 md:py-3 md:px-6 rounded-full shadow-lg text-lg md:text-xl">Next.js</div>
-      </div>
+        <img src="/icons/python.svg" alt="Python" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/typescript.svg" alt="Typescript" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/javascript.svg" alt="Javascript" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/tailwind.svg" alt="Tailwind CSS" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/figma.svg" alt="Figma" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/docker.svg" alt="Docker" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/astro.svg" alt="Astro" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/archlinux.svg" alt="Archlinux" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/git.svg" alt="Git" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/mysql.svg" alt="Mysql" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/bash.svg" alt="Bash" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/ubuntu.svg" alt="Ubuntu" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/postgres.svg" alt="Postgres" class="w-8 h-8 md:w-10 md:h-10">
+        <img src="/icons/react.svg" alt="React" class="w-8 h-8 md:w-10 md:h-10">
+      </div>       
     </section>
 
     <!-- Sección de Proyectos -->
@@ -57,34 +65,34 @@ import ProjectCard from '../components/ProjectCard.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <!-- Proyecto 1 -->
         <ProjectCard 
-          title="Aplicación Web - React & Node.js" 
-          imgSrc="ruta-a-la-imagen-del-proyecto1.jpg" 
-          description="Desarrollé una aplicación web con React y Node.js optimizando la escalabilidad y la experiencia del usuario. Incluye autenticación con JWT, panel de administración, y manejo de bases de datos en MongoDB."
-          technologies={["React", "Redux", "Node.js", "Express", "MongoDB", "Mongoose", "JWT para autenticación"]}
+          title="Desarrollo de Plataforma Backend y Frontend para Bot Criptomonedas" 
+          imgSrc="/proyectos/smarttrade.png" 
+          description="Creé el diseño web, desarrollé el frontend y backend, e implementé un microservicio y una base de datos para gestionar las operaciones del bot de criptomonedas y los usuarios de la plataforma."
+          technologies={["React", "Ionic", "Figma", "PostgresSQL", "Flask", "JWT", "AWS EC2", "Docker"]}
           githubLink="https://github.com/usuario/proyecto1"
         />
         <!-- Proyecto 2 -->
         <ProjectCard 
-          title="API Rest - Python & Flask" 
-          imgSrc="ruta-a-la-imagen-del-proyecto2.jpg" 
-          description="Creación de una API Rest con Python y Flask que gestiona datos de usuarios y productos, diseñada para integrarse con aplicaciones frontend y otros servicios a través de endpoints robustos y escalables."
-          technologies={["Python", "Flask", "PostgreSQL", "Docker", "NGINX"]}
-          githubLink="https://github.com/usuario/proyecto2"
+          title="Blog de programación" 
+          imgSrc="/proyectos/blog.png" 
+          description="Blog de programación donde comparto lo que voy aprendiendo, incluyendo tutoriales, experiencias y recursos sobre desarrollo de software, frameworks y mejores prácticas en el mundo de la programación."
+          technologies={["Astro", "Tailwind", "React"]}
+          githubLink="https://tumodev.com/blog"
         />
         <!-- Proyecto 3 -->
         <ProjectCard 
-          title="Sistema de Gestión - Django & React" 
-          imgSrc="ruta-a-la-imagen-del-proyecto3.jpg" 
-          description="Desarrollé un sistema de gestión para pequeñas empresas, integrando un backend con Django y un frontend con React. El sistema incluye reportes automáticos, gestión de usuarios, y notificaciones."
-          technologies={["Django", "Django Rest Framework", "React", "Axios", "SQLite", "Bootstrap"]}
-          githubLink="https://github.com/usuario/proyecto3"
+          title="Portafolio web" 
+          imgSrc="/proyectos/portfolio.png" 
+          description="Portafolio desarrollado con Astro, destacando un diseño moderno y eficiente. "
+          technologies={["Astro", "Taildwind", "Figma"]}
+          githubLink="https://tumodev.com"
         />
         <!-- Proyecto 4 -->
         <ProjectCard 
-          title="Plataforma de e-learning - MERN Stack" 
-          imgSrc="ruta-a-la-imagen-del-proyecto4.jpg" 
-          description="Plataforma de educación en línea desarrollada con la pila MERN (MongoDB, Express, React, Node). Incluye gestión de cursos, usuarios y pagos integrados con Stripe."
-          technologies={["MongoDB", "Express", "React", "Node", "Stripe", "JWT", "Material-UI"]}
+          title="Evaluador Automático de Cuestionarios para la PUCV" 
+          imgSrc="/proyectos/evaluai.png" 
+          description="Aplicación para evaluar automáticamente cuestionarios de desarrollo usando modelos de lenguaje avanzados (LLMs), detallando sus principales funcionalidades y flujo de trabajo."
+          technologies={["Electron", "React", "Python"]}
           githubLink="https://github.com/usuario/proyecto4"
         />
       </div>
@@ -97,22 +105,30 @@ import ProjectCard from '../components/ProjectCard.astro';
           Experiencia Laboral
         </h2>
         <div class="relative border-l border-teal-400">
-          <!-- Experiencia 1 -->
+          <!-- AndrewBot -->
           <div class="mb-10 ml-6 text-left">
             <span class="absolute flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-teal-400 rounded-full -left-3 md:-left-4 ring-8 ring-gray-900"></span>
-            <h3 class="text-white text-xl md:text-2xl font-bold">Desarrollador FullStack - BrainLink</h3>
-            <p class="text-gray-300">Enero 2021 - Julio 2023</p>
+            <h3 class="text-white text-xl md:text-2xl font-bold">Desarrollador FullStack - AndrewBot</h3>
+            <p class="text-gray-300">Marzo 2024 - Actualidad</p>
             <p class="text-gray-300 mt-2 leading-relaxed">
-              Colaboré en el desarrollo de aplicaciones web y un juego educativo utilizando tecnologías modernas. Además, diseñé una API que facilita la comunicación entre sistemas utilizando patrones de diseño y buenas prácticas en desarrollo.
+              Desarrollador en un proyecto de bot de trading, donde trabajé en el front y backend. Implementé un microservicio para la gestión de operaciones y desarrollé el backend de usuarios. Además, diseñé e implementé el frontend, creando una interfaz intuitiva que permite a los usuarios interactuar eficientemente con el bot.  
             </p>
           </div>
-          <!-- Experiencia 2 -->
+          <!-- Desarrollador Academico-->
           <div class="mb-10 ml-6 text-left">
             <span class="absolute flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-teal-400 rounded-full -left-3 md:-left-4 ring-8 ring-gray-900"></span>
-            <h3 class="text-white text-xl md:text-2xl font-bold">Ingeniero de Software - Mi Futuro</h3>
-            <p class="text-gray-300">Agosto 2023 - Actualidad</p>
+            <h3 class="text-white text-xl md:text-2xl font-bold">Desarrollador de Investigación Academica</h3>
+            <p class="text-gray-300">Julio 2023 - Actual</p>
             <p class="text-gray-300 mt-2 leading-relaxed">
-              Formé parte del equipo que implementó un sistema de análisis de datos para predecir las tasas de matriculación en educación superior, aplicando técnicas de análisis de datos y modelos predictivos.
+              Como desarrollador académico, creé EvaluAI, un evaluador automático para el aula virtual de la PUCV, y Paper Graph, una herramienta que genera grafos genealógicos de papers. Ambos proyectos mejoran procesos educativos: EvaluAI automatiza la calificación y Paper Graph facilita la comprensión de relaciones en la investigación académica.            </p>
+          </div>
+          <!-- Brainlink -->
+          <div class="mb-10 ml-6 text-left">
+            <span class="absolute flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-teal-400 rounded-full -left-3 md:-left-4 ring-8 ring-gray-900"></span>
+            <h3 class="text-white text-xl md:text-2xl font-bold">Ingeniero de Software - Brainlink</h3>
+            <p class="text-gray-300">Noviembre 2024 - Marzo 2024</p>
+            <p class="text-gray-300 mt-2 leading-relaxed">
+              Desarrollé la documentación completa para un proyecto de juego de cartas educativo. Creé una página web de presentación y diseñé el backend que permitía la comunicación entre el juego y el sitio web. La documentación incluyó especificaciones técnicas, guías de uso y detalles de la integración del backend con el frontend.
             </p>
           </div>
         </div>
