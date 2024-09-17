@@ -1,0 +1,9 @@
+[
+  {
+      "title": "Bienvenidos a mi Blog",
+      "date": "2024-09-16",
+      "excerpt": "Bienvenido a mi blog sobre mi carrera en el mundo de la informatica...",
+      "tags": ["Astro", "JavaScript"],
+      "slug": "bienvenidos-a-mi-blog"
+  }
+]

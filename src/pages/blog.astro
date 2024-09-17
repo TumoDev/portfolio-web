@@ -1,0 +1,121 @@
+    ---
+    import Layout from '../layouts/Layout.astro';
+    import featuredPostsData from '../data/featuredPosts.json';
+    import postsData from '../data/posts.json';
+    import Carousel from '../components/Carousel.jsx'; // Importa el componente React
+
+    const postsPerPage = 5; // Número de publicaciones por página
+    const totalPages = Math.ceil(postsData.length / postsPerPage);
+
+    // Obtener la página actual desde la URL, por defecto es la página 1
+    const currentPage = parseInt(Astro.url.searchParams.get('page') || '1');
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+
+    // Filtrar las publicaciones para la página actual
+    const paginatedPosts = postsData.slice(startIndex, endIndex);
+
+    const featuredPosts = featuredPostsData;
+    ---
+
+    <Layout title='TumoDev Blog'>
+        <!-- Nueva Sección de Presentación con Imagen -->
+        <section class="w-full mx-auto py-8 md:py-24 lg:py-40 bg-gray-900 text-gray-100">
+            <div class="flex flex-col md:flex-row items-center max-w-5xl mx-auto px-4 md:px-6">
+                <!-- Imagen a la izquierda -->
+                <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-8 mt-16 md:mt-0">
+                    <img src="/app-window.svg" alt="Imagen del blog" class="w-48 sm:w-64 md:w-auto">
+                </div>
+                <!-- Texto de presentación -->
+                <div class="flex flex-col text-center md:text-left items-center md:items-start">
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold">
+                        Bienvenido a <span class="text-teal-400">TumoDev</span> Blog
+                    </h1>
+                    <div class="text-lg sm:text-2xl md:text-3xl font-light mb-4 sm:mb-6">
+                        <span id="typed-text" class="text-teal-400"></span> <!-- Texto animado -->
+                    </div>
+                    <p class="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 px-2 sm:px-0">
+                        Aquí comparto mis experiencias, aprendizajes y proyectos en el mundo del desarrollo web y programación.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
+                        <a href="#blog" class="w-full sm:w-auto text-center px-4 py-2 sm:px-5 sm:py-3 bg-teal-500 text-white rounded-full shadow-lg hover:bg-teal-600 transition">
+                            Explorar el Blog
+                        </a>
+                        <a href="https://www.linkedin.com/in/franciscocj/" class="w-full sm:w-auto text-center px-4 py-2 sm:px-5 sm:py-3 bg-gray-800 text-teal-400 rounded-full shadow-lg hover:bg-gray-700 transition">
+                            Conóceme
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrusel de Publicaciones Destacadas -->
+        <section id="featured-posts" class="w-full mx-auto py-8 md:py-16 lg:py-20 px-4 sm:px-5 md:px-40 bg-gray-800">
+            <h2 class="text-teal-400 text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8">Publicaciones Destacadas</h2>
+            <Carousel featuredPosts={featuredPosts} client:idle />
+        </section>
+
+        <!-- Listado de Todas las Publicaciones -->
+        <section id="blog" class="w-full mx-auto py-8 md:py-16 lg:py-24 px-4 sm:px-5 md:px-40 bg-gray-900">
+            <h2 class="text-teal-400 text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8">Publicaciones</h2>
+            <div id="posts-container" class="space-y-4">
+            {paginatedPosts.map((post) => (
+                <a href={`/posts/${post.slug}`} class="block transform transition hover:scale-105 hover:shadow-xl">
+                    <div class="bg-gray-700 p-2 sm:p-3 rounded-lg">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-100 mb-1">{post.title}</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 mb-1">Publicado el {post.date} • Etiquetas: {post.tags.join(', ')}</p>
+                        <p class="text-gray-300 mb-2">{post.excerpt}</p>
+                        <span class="inline-block bg-teal-500 text-white px-2 py-1 sm:px-3 sm:py-1 rounded hover:bg-teal-600 transition">
+                            Continuar leyendo
+                        </span>
+                    </div>
+                </a>
+            ))}
+            </div>
+            
+            <!-- Controles de Paginación -->
+            <div class="flex justify-center mt-8 space-x-2">
+                {currentPage > 1 && (
+                    <a href={`?page=${currentPage - 1}`} class="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition">Anterior</a>
+                )}
+                
+                {/* Mostrar números de página */}
+                {[...Array(totalPages)].map((_, index) => {
+                    const pageNum = index + 1;
+                    return (
+                        <a 
+                            href={`?page=${pageNum}`} 
+                            class={`px-3 py-1 rounded ${pageNum === currentPage ? 'bg-teal-500 text-white' : 'bg-gray-700 text-gray-300'} hover:bg-teal-600 transition`}
+                        >
+                            {pageNum}
+                        </a>
+                    );
+                })}
+                
+                {currentPage < totalPages && (
+                    <a href={`?page=${currentPage + 1}`} class="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition">Siguiente</a>
+                )}
+            </div>
+        </section>
+
+        <!-- Script para hacer scroll a la sección blog -->
+        <script>
+            document.addEventListener('astro:page-load', function () {
+                const blogSection = document.getElementById('blog');
+                
+                // Verificar si la URL contiene el parámetro "page" para paginación
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.has('page')) {
+                    // Solo hacer scroll a la sección de blog si se está cambiando de página
+                    if (blogSection) {
+                        blogSection.scrollIntoView({ behavior: 'auto' });
+                    }
+                } else {
+                    // Si no hay parámetro de paginación, desplazarse al inicio de la página
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        </script>
+        
+
+    </Layout>
