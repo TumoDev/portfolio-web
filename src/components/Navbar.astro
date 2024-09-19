@@ -28,26 +28,43 @@
       <li><a href="/#contacto" class="block hover:text-teal-400 transition">Contacto</a></li>
     </ul>
   </div>
-</header>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+  <!-- Script para controlar el menú hamburguesa -->
+  <script>
+    document.addEventListener('astro:after-swap', () => {
+      initializeMenuToggle();
+    });
 
-    if (menuToggle && mobileMenu) {
-      let isMenuOpen = false;
+    function initializeMenuToggle() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
 
-      const toggleMenu = (event: { preventDefault: () => void; }) => {
-        event.preventDefault();
-        isMenuOpen = !isMenuOpen;
-        mobileMenu.classList.toggle('hidden', !isMenuOpen);
-        mobileMenu.classList.toggle('flex', isMenuOpen);
-      };
+      if (menuToggle && mobileMenu) {
+        const toggleMenu = () => {
+          if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+          } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+          }
+        };
 
-      menuToggle.addEventListener('click', toggleMenu);
-    } else {
-      console.error('El menú toggle o el menú móvil no se encontraron.');
+        menuToggle.addEventListener('click', toggleMenu);
+
+        const menuLinks = mobileMenu.querySelectorAll('a');
+
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+          });
+        });
+      } else {
+        console.error('El menú toggle o el menú móvil no se encontraron.');
+      }
     }
-  });
-</script>
+
+    document.addEventListener('DOMContentLoaded', initializeMenuToggle);
+  </script>
+</header>
