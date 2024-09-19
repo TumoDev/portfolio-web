@@ -36,13 +36,16 @@
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (menuToggle && mobileMenu) {
-      const toggleMenu = () => {
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex'); 
+      let isMenuOpen = false;
+
+      const toggleMenu = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('hidden', !isMenuOpen);
+        mobileMenu.classList.toggle('flex', isMenuOpen);
       };
 
       menuToggle.addEventListener('click', toggleMenu);
-      menuToggle.addEventListener('touchstart', toggleMenu);
     } else {
       console.error('El menú toggle o el menú móvil no se encontraron.');
     }
